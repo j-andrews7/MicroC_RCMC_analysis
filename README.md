@@ -1,5 +1,8 @@
 # MicroC_RCMC_analysis (Nextflow)
 
+> [!WARNING]
+> **This Nextflow port was written with an AI coding assistant, and its output has not been verified against the original pipeline.** It has only been run on the small demo dataset (hg19 chr16, 3M read pairs). No full-size dataset has been processed with it, and its results have not been compared with the original Snakemake pipeline's outputs on real data. Until that comparison is done (see [Reproducing the original results](#reproducing-the-original-results)), treat all outputs, including pairs, contact maps and loop calls, as unvalidated. The original pipeline is kept unchanged in [`legacy/snakemake/`](legacy/snakemake/).
+
 A parallelised [Nextflow](https://www.nextflow.io/) pipeline for alignment, processing, contact-map generation and loop calling of **Micro-C** and **RCMC** (Region Capture Micro-C) data, built with [nf-core](https://nf-co.re/docs/nf-core-tools) tooling (nf-core template, nf-schema parameter/samplesheet validation, nf-core modules and institutional configs).
 
 This is a port of the original [Hansen lab Snakemake pipeline](https://github.com/ahansenlab/MicroC_RCMC_analysis), which is kept unchanged in [`legacy/snakemake/`](legacy/snakemake/). The core outputs (pairs, deduplication statistics, `.cool`/`.mcool` contact maps, RCMC blacklists) are produced with **the same commands and tool versions** and are written to **the same file names and folders**. The port adds:
