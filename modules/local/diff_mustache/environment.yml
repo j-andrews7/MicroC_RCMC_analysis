@@ -1,0 +1,20 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/nf-core/modules/master/modules/environment-schema.json
+# mustache is not on bioconda; install the PyPI release on top of pinned conda dependencies.
+# scipy < 1.14 / numpy < 2 keep the deprecated scipy.ndimage namespaces mustache imports.
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - conda-forge::python=3.10
+  - conda-forge::numpy=1.26.4
+  - conda-forge::scipy=1.13.1
+  - conda-forge::pandas=2.2.3
+  - conda-forge::statsmodels
+  - conda-forge::requests
+  - bioconda::cooler=0.10.4
+  - bioconda::hic-straw=1.3.1
+  - conda-forge::procps-ng
+  - conda-forge::pip
+  - pip:
+      - mustache-hic==1.3.3

@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/j-andrews7/MicroC_RCMC_analysis/main/assets/schema_contrasts.json",
+    "title": "j-andrews7/microcrcmc pipeline - params.contrasts schema",
+    "description": "Schema for the file provided with params.contrasts",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "condition1": {
+                "type": "string",
+                "pattern": "^[^\\s/]+$",
+                "errorMessage": "condition1 must match a `sample` value in the samplesheet"
+            },
+            "condition2": {
+                "type": "string",
+                "pattern": "^[^\\s/]+$",
+                "errorMessage": "condition2 must match a `sample` value in the samplesheet"
+            }
+        },
+        "required": ["condition1", "condition2"]
+    },
+    "uniqueEntries": ["condition1", "condition2"]
+}

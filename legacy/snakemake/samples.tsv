@@ -1,0 +1,2 @@
+condition	fastq1	fastq2	rep	lane
+WT	../../demo/human.chr16.merged_downsampled_1.fastq.gz	../../demo/human.chr16.merged_downsampled_2.fastq.gz	rep1	lane1

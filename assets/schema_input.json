@@ -1,0 +1,46 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/j-andrews7/MicroC_RCMC_analysis/main/assets/schema_input.json",
+    "title": "j-andrews7/microcrcmc pipeline - params.input schema",
+    "description": "Schema for the file provided with params.input",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "sample": {
+                "type": "string",
+                "pattern": "^[^\\s/]+$",
+                "errorMessage": "Sample (condition) name must be provided and cannot contain spaces or '/'",
+                "meta": ["condition"]
+            },
+            "fastq_1": {
+                "type": "string",
+                "format": "file-path",
+                "exists": true,
+                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
+                "errorMessage": "FastQ file for reads 1 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+            },
+            "fastq_2": {
+                "type": "string",
+                "format": "file-path",
+                "exists": true,
+                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
+                "errorMessage": "FastQ file for reads 2 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+            },
+            "replicate": {
+                "type": "string",
+                "pattern": "^[^\\s/]+$",
+                "errorMessage": "Replicate must be provided (any label, e.g. 'rep1') and cannot contain spaces or '/'",
+                "meta": ["rep"]
+            },
+            "lane": {
+                "type": "string",
+                "pattern": "^[^\\s/]+$",
+                "errorMessage": "Lane must be provided (any label, e.g. 'lane1') and cannot contain spaces or '/'",
+                "meta": ["lane"]
+            }
+        },
+        "required": ["sample", "fastq_1", "fastq_2", "replicate", "lane"]
+    },
+    "uniqueEntries": ["sample", "replicate", "lane"]
+}

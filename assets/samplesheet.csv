@@ -1,0 +1,5 @@
+sample,fastq_1,fastq_2,replicate,lane
+WT,/path/to/WT_rep1_L001_R1.fastq.gz,/path/to/WT_rep1_L001_R2.fastq.gz,rep1,lane1
+WT,/path/to/WT_rep1_L002_R1.fastq.gz,/path/to/WT_rep1_L002_R2.fastq.gz,rep1,lane2
+WT,/path/to/WT_rep2_L001_R1.fastq.gz,/path/to/WT_rep2_L001_R2.fastq.gz,rep2,lane1
+KO,/path/to/KO_rep1_L001_R1.fastq.gz,/path/to/KO_rep1_L001_R2.fastq.gz,rep1,lane1

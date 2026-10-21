@@ -1,0 +1,78 @@
+repository_type: pipeline
+
+nf_core_version: 4.1.0
+
+lint:
+  files_unchanged:
+    - CODE_OF_CONDUCT.md
+    - assets/nf-core-microcrcmc_logo_light.png
+    - docs/images/nf-core-microcrcmc_logo_light.png
+    - docs/images/nf-core-microcrcmc_logo_dark.png
+    - .github/ISSUE_TEMPLATE/bug_report.yml
+    - .github/PULL_REQUEST_TEMPLATE.md
+    - assets/email_template.txt
+    - docs/README.md
+    - .prettierignore
+    - LICENSE
+    - docs/CONTRIBUTING.md
+    - .gitattributes
+    - assets/email_template.html
+  template_strings: false
+  container_configs: false
+  nextflow_config:
+    - manifest.name
+    - manifest.homePage
+  nf_test_content: false
+  multiqc_config:
+    - report_comment
+  files_exist:
+    - CODE_OF_CONDUCT.md
+    - assets/nf-core-microcrcmc_logo_light.png
+    - docs/images/nf-core-microcrcmc_logo_light.png
+    - docs/images/nf-core-microcrcmc_logo_dark.png
+    - .github/ISSUE_TEMPLATE/config.yml
+    - .github/workflows/awstest.yml
+    - .github/workflows/awsfulltest.yml
+    - LICENSE
+    - .github/workflows/nf-test.yml
+    - .github/actions/get-shards/action.yml
+    - .github/actions/nf-test/action.yml
+    - nf-test.config
+    - tests/default.nf.test
+    - .github/workflows/branch.yml
+    - .github/workflows/nf-test.yml
+    - .github/actions/get-shards/action.yml
+    - .github/actions/nf-test/action.yml
+    - .github/workflows/pr-comment.yml
+    - .github/workflows/linting.yml
+    - .prettierignore
+    - .prettierrc.yml
+    - conf/igenomes.config
+    - conf/igenomes_ignored.config
+    - ro-crate-metadata.json
+  readme:
+    - nextflow_badge
+    - nfcore_template_badge
+
+template:
+  org: j-andrews7
+  name: microcrcmc
+  description: Micro-C and RCMC processing pipeline - alignment, pairs, contact maps
+    (mcool) and mustache loop calling
+  author: Jared Andrews (Nextflow port); Hansen lab (original Snakemake pipeline)
+  version: 1.0.0dev
+  force: true
+  outdir: /home/jandrews/nfcreate/microcrcmc
+  skip_features:
+    - ci
+    - nf-test
+    - igenomes
+    - github_badges
+    - license
+    - codespaces
+    - vscode
+    - seqera_platform
+    - gpu
+    - rocrate
+    - code_linters
+  is_nfcore: false

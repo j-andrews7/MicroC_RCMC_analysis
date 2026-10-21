@@ -1,0 +1,5 @@
+sample,fastq_1,fastq_2,replicate,lane
+WT,https://raw.githubusercontent.com/j-andrews7/MicroC_RCMC_analysis/main/demo/human.chr16.merged_downsampled_1.fastq.gz,https://raw.githubusercontent.com/j-andrews7/MicroC_RCMC_analysis/main/demo/human.chr16.merged_downsampled_2.fastq.gz,rep1,lane1
+WT,https://raw.githubusercontent.com/j-andrews7/MicroC_RCMC_analysis/main/demo/human.chr16.merged_downsampled_1.fastq.gz,https://raw.githubusercontent.com/j-andrews7/MicroC_RCMC_analysis/main/demo/human.chr16.merged_downsampled_2.fastq.gz,rep1,lane2
+KO,https://raw.githubusercontent.com/j-andrews7/MicroC_RCMC_analysis/main/demo/human.chr16.merged_downsampled_1.fastq.gz,https://raw.githubusercontent.com/j-andrews7/MicroC_RCMC_analysis/main/demo/human.chr16.merged_downsampled_2.fastq.gz,rep1,lane1
+KO,https://raw.githubusercontent.com/j-andrews7/MicroC_RCMC_analysis/main/demo/human.chr16.merged_downsampled_1.fastq.gz,https://raw.githubusercontent.com/j-andrews7/MicroC_RCMC_analysis/main/demo/human.chr16.merged_downsampled_2.fastq.gz,rep2,lane1

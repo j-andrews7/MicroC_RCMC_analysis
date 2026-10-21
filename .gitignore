@@ -1,0 +1,14 @@
+.nextflow*
+work/
+data/
+results/
+.DS_Store
+testing/
+testing*
+*.pyc
+null/
+.lineage/
+outputs/
+legacy/snakemake/outputs/
+legacy/snakemake/logs/
+legacy/snakemake/.snakemake/
