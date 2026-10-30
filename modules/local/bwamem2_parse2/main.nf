@@ -26,12 +26,18 @@ process BWAMEM2_PARSE2 {
     def prefix = task.ext.prefix ?: "${meta.id}"
     // Same command as the original Snakemake `make_pairs` rule, minus the trailing `pairtools sort`
     // (sorting happens per lane in PAIRTOOLS_SORT_LANE after all chunks are re-joined in read order).
+    // The index prefix is located with bash globs rather than `find`: the Singularity build of the
+    // container is a minimal image without findutils. The index is staged either as loose files
+    // (index next to the FASTA) or as a directory (--bwamem2_index, or BWAMEM2_INDEX output).
     """
-    INDEX=\$(find -L ./ -name "*.0123" | sed 's/\\.0123\$//')
-    if [ "\$(echo "\$INDEX" | grep -c .)" -ne 1 ]; then
-        echo "ERROR: expected exactly one bwa-mem2 index (*.0123) in the staged index, found: \$INDEX" >&2
+    shopt -s nullglob
+    INDEX_FILES=( ./*.0123 ./*/*.0123 )
+    shopt -u nullglob
+    if [ \${#INDEX_FILES[@]} -ne 1 ]; then
+        echo "ERROR: expected exactly one bwa-mem2 index (*.0123) in the staged index, found: \${INDEX_FILES[*]:-none}" >&2
         exit 1
     fi
+    INDEX=\${INDEX_FILES[0]%.0123}
 
     if ! (bwa-mem2 mem -t ${task.cpus} -SP ${args} \$INDEX ${reads[0]} ${reads[1]} \\
         | pairtools parse2 \\
